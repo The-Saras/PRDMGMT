@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Dpr" ADD COLUMN     "Total" DOUBLE PRECISION DEFAULT 0;

@@ -1,0 +1,61 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Pipe {
+  id       String    @id @default(uuid())
+  name     String
+  sname    String? @unique
+  Quantity Int?
+  weight  Float?
+  type     String?
+  size    String?
+  dprs     PipeDpr[]  
+
+}
+
+model Dpr {
+  id            String               @id @default(uuid())
+  date          DateTime             @default(now())
+  rawMaterials  Raw_materialdpr[]    // 👈 raw material usage records for this DPR
+  pipes         PipeDpr[]            // 👈 pipe production records for this DPR
+  Total  Float? @default(0) // 👈 total quantity produced in this DPR
+}
+
+model PipeDpr {
+  id             String @id @default(uuid())
+  dprId          String
+  pipeId         String
+  quantity_used  Int    // 👈 quantity produced/added in this DPR for this pipe
+
+  dpr  Dpr  @relation(fields: [dprId], references: [id])
+  pipe Pipe @relation(fields: [pipeId], references: [id])
+}
+
+model Raw_material {
+  id         String               @id @default(uuid())
+  name       String
+  Quantity   Int
+  short_name String? @unique
+  dprs       Raw_materialdpr[]    // 👈 relation: all DPR logs this material was part of
+}
+
+model Raw_materialdpr {
+  id             String  @id @default(uuid())
+  dprId          String
+  rawMaterialId  String
+  quantity_used  Float
+
+  dpr         Dpr          @relation(fields: [dprId], references: [id])
+  rawMaterial Raw_material @relation(fields: [rawMaterialId], references: [id])
+}
+
+model Balance{
+  id        String @id @default(uuid())
+  qutity  Float?
+}
