@@ -1,10 +1,12 @@
+import BackButton from "../components/backbutton";
+
 export default function CreateRawMaterialPage() {
   return (
     <div className="max-w-3xl mx-auto mt-10 bg-white border border-slate-200 rounded-lg shadow p-8">
       <h1 className="text-2xl font-semibold text-slate-800 mb-6 border-b pb-3">
         Create Raw Material
       </h1>
-
+      <BackButton />
       <form className="flex flex-col gap-6">
         <div>
           <label className="block text-sm font-medium text-slate-600 mb-1">

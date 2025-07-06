@@ -59,3 +59,10 @@ model Balance{
   id        String @id @default(uuid())
   qutity  Float?
 }
+
+model StockChange{
+  id        String @id @default(uuid())
+  date      DateTime @default(now())
+  quantity  Int?
+  sname   String?
+}

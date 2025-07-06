@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import BackButton from '../components/backbutton'
 import axios from "axios";
 
 export default function CreatePipe() {
@@ -29,6 +30,7 @@ export default function CreatePipe() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-slate-100 p-6">
+      <BackButton />
       <div className="bg-white shadow-lg rounded-xl p-8 w-full max-w-md">
         <h1 className="text-2xl font-bold mb-6 text-gray-800">Create Pipe</h1>
         <form className="space-y-4">

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import DprCard from "../components/DprCard";
+import BackButton from "../components/backbutton"
 import axios from "axios";
 
 export default function DprPage() {
@@ -76,6 +77,7 @@ export default function DprPage() {
         >
           Make dpr
         </button>
+        <BackButton />
       </div>
     </div>
   );

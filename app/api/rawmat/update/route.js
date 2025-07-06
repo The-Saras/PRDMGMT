@@ -23,6 +23,17 @@ export async function POST(request) {
         }
     })
 
+    const stockchange = await db.stockChange.create({
+      data:{
+        quantity: qty,
+        sname: sname
+      }
+    })
+
+    if(stockchange){
+      console.log("Stock Change Recorded");
+    }
+
     console.log("Raw Material Quantity Updated");
     return NextResponse.json(updateMt, { status: 200 });
   } catch (err) {

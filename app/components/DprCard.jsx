@@ -5,17 +5,19 @@ export default function DprCard(props) {
   const router = useRouter();
 
   return (
-    <div className="bg-slate-50 border border-slate-300 p-6 rounded-xl shadow flex justify-between items-center hover:shadow-md transition duration-200">
-      <div>
-        <p className="text-xl font-semibold text-slate-800 mb-1">DPR Date:</p>
-        <p className="text-lg text-slate-600">{props.date}</p>
+    <div className="bg-white border border-gray-200 rounded-lg p-6 hover:border-gray-300 transition-colors duration-200">
+      <div className="flex justify-between items-center">
+        <div>
+          <p className="text-sm text-gray-500 mb-1">DPR Date</p>
+          <p className="text-lg font-medium text-gray-900">{props.date}</p>
+        </div>
+        <button
+          onClick={() => router.push(`/dpr/${props.location}`)}
+          className="text-blue-600 hover:text-blue-700 font-medium text-sm transition-colors"
+        >
+          View Details →
+        </button>
       </div>
-      <button
-        onClick={() => router.push(`/dpr/${props.location}`)}
-        className="bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition"
-      >
-        View Details
-      </button>
     </div>
   );
 }

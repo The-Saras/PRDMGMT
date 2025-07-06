@@ -12,6 +12,7 @@ export async function GET(request) {
         weight: true,
         Quantity: true,
         sname: true,
+        type: true,
       }
     });
     return NextResponse.json(res, { status: 200 });

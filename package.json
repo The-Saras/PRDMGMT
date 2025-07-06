@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "electron": "electron electron/main.js"
+
   },
   "dependencies": {
     "@prisma/client": "^6.9.0",
@@ -21,6 +23,7 @@
     "@tailwindcss/postcss": "^4",
     "@types/node": "24.0.1",
     "@types/react": "19.1.8",
+    "electron": "^37.2.0",
     "prisma": "^6.9.0",
     "tailwindcss": "^4",
     "typescript": "5.8.3"
