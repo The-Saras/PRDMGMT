@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Sidebar() {
   return (
     <div className="bg-slate-800 text-white h-screen w-64 p-5 flex flex-col gap-4 border-r border-slate-700">
-      <h1 className="text-xl font-semibold mb-8 tracking-wide">ISCON ERP</h1>
+      <h1 className="text-xl font-semibold mb-8 tracking-wide">ESSCON PIPES AND FITTINGS</h1>
 
       <nav className="flex flex-col gap-2">
         <Link

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import BackButton from '../components/backbutton'
+import BackButton from "../components/backbutton";
 import axios from "axios";
 
 export default function CreatePipe() {
@@ -22,7 +22,6 @@ export default function CreatePipe() {
       if (res.status === 200) {
         alert("Pipe created successfully!");
       }
-      
     } catch (error) {
       console.error("Error creating pipe:", error);
     }
@@ -86,7 +85,19 @@ export default function CreatePipe() {
             />
           </div>
 
-          {/* Type */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Type
+            </label>
+            <input
+              type="text"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter Type"
+              onChange={(e) => setType(e.target.value)}
+            />
+          </div>
+
+          {/* Type 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Type
@@ -104,7 +115,7 @@ export default function CreatePipe() {
               <option value="GI">GI</option>
               <option value="PVC">PVC</option>
             </select>
-          </div>
+          </div>*/}
 
           {/* Submit Button */}
           <div className="pt-4">
